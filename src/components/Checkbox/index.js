@@ -9,7 +9,7 @@ const Checkbox = ({
 }) => {
     return (
         <div className={className}>
-            <div className="flex items-center mr-4">
+            <div className="flex items-center">
                 <input
                     type="checkbox"
                     id="A3-yes"
@@ -19,7 +19,7 @@ const Checkbox = ({
                     className="opacity-0 absolute h-8 w-8"
                     onChange={onChange}
                 />
-                <div className="bg-white border-2 rounded-md border-text-color-1 w-8 h-8 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-text-color-1">
+                <div className="bg-transparent border-2 rounded-md border-text-color-1 w-8 h-8 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-text-color-1">
                     <svg
                         className="fill-current hidden w-3 h-3 text-text-color-1 pointer-events-none"
                         version="1.1"

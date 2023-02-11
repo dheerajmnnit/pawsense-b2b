@@ -2,10 +2,14 @@ import React from "react";
 
 import Layout from "../../components/Layout";
 import Container from "../../components/Layout/Container";
+import Button from "../../components/Button";
+
+import { useNavigate } from "react-router";
 
 import SplashScreen from "../../assets/img/splash-screen.png";
 
 const Home = () => {
+    const navigate = useNavigate();
     return (
         <Layout>
             <Container>
@@ -22,6 +26,19 @@ const Home = () => {
                             PawSense belives in greater control <br /> for businesses. Seize
                             the day and get <br /> more done!
                         </p>
+                        <div className="flex items-center gap-4 mt-12">
+                            <Button
+                                label="Join Us"
+                                className="ml-10"
+                                variant="primary"
+                                onClick={() => navigate("/login")}
+                            />
+                            <Button
+                                label="Walk Thru"
+                                variant="secondary"
+                                onClick={() => navigate("/demo")}
+                            />
+                        </div>
                     </div>
                 </div>
             </Container>

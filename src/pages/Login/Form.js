@@ -27,7 +27,7 @@ const Form = () => {
 
             <div className="flex items-center justify-between w-full mt-3">
                 <Checkbox
-                    className="flex items-center"
+                    className="flex items-center mr-4"
                     label="Remember Me"
                     checked={false}
                     value={"YES"}
