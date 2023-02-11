@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoaderWrapper from "./../components/Loader";
 
 const Home = lazy(() => import("./Homepage"));
+const CreateProfile = lazy(() => import("./CreateProfile"));
+const Login = lazy(() => import("./Login"));
 const AboutUs = lazy(() => import("./AboutUs"));
 
 const AppRoutes = () => {
@@ -12,6 +14,8 @@ const AppRoutes = () => {
             <Router>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/create-profile" element={<CreateProfile />} />
+                    <Route path="/login" element={<Login />} />
                     <Route path="/about-us" element={<AboutUs />} />
                 </Routes>
             </Router>
