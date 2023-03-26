@@ -1,6 +1,6 @@
 const endpoints = {
-    GENERATE_OTP_FOR_LOGIN: "/auth/login",
-    GENERATE_OTP_FOR_REGISTER: "/auth/register",
+  SIGNUP: "/auth/signup",
+  SIGNIN: "/auth/login",
 };
 
 export default endpoints;

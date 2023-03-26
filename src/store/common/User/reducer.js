@@ -1,53 +1,105 @@
 import {
-    USER_DETAILS_LOADING,
-    USER_DETAILS_SUCCESS,
-    USER_DETAILS_ERROR,
-    REMOVE_USER_DETAILS,
+  SIGNUP_LOADING,
+  SIGNUP_ERROR,
+  SIGNUP_SUCCESS,
+  SIGNIN_LOADING,
+  SIGNIN_ERROR,
+  SIGNIN_SUCCESS,
+  STORE_USER,
+  LOGOUT_USER,
 } from "./constants";
 
 const initialState = {
+  signup: {
     loading: false,
     data: null,
     error: null,
+  },
+  signin: {
+    loading: false,
+    data: null,
+    error: null,
+  },
+  user: null,
 };
 
 const userReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case USER_DETAILS_LOADING:
-            return {
-                ...state,
-                loading: true,
-                data: null,
-                error: null,
-            };
+  switch (action.type) {
+    case SIGNUP_LOADING:
+      return {
+        ...state,
+        signup: {
+          loading: true,
+          data: null,
+          error: null,
+        },
+      };
 
-        case USER_DETAILS_SUCCESS:
-            return {
-                ...state,
-                loading: false,
-                data: action.user,
-                error: null,
-            };
+    case SIGNUP_ERROR:
+      return {
+        ...state,
+        signup: {
+          loading: false,
+          data: null,
+          error: action.error,
+        },
+      };
 
-        case USER_DETAILS_ERROR:
-            return {
-                ...state,
-                loading: false,
-                data: null,
-                error: action.error,
-            };
+    case SIGNUP_SUCCESS:
+      return {
+        ...state,
+        signup: {
+          loading: false,
+          data: action.data,
+          error: null,
+        },
+      };
 
-        case REMOVE_USER_DETAILS:
-            return {
-                ...state,
-                loading: false,
-                data: null,
-                error: null,
-            };
+    case SIGNIN_LOADING:
+      return {
+        ...state,
+        signin: {
+          loading: true,
+          data: null,
+          error: null,
+        },
+      };
 
-        default:
-            return state;
-    }
+    case SIGNIN_ERROR:
+      return {
+        ...state,
+        signin: {
+          loading: false,
+          data: null,
+          error: action.error,
+        },
+      };
+
+    case SIGNIN_SUCCESS:
+      return {
+        ...state,
+        signin: {
+          loading: false,
+          data: action.data,
+          error: null,
+        },
+      };
+
+    case STORE_USER:
+      return {
+        ...state,
+        user: action.user,
+      };
+
+    case LOGOUT_USER:
+      return {
+        ...state,
+        user: null,
+      };
+
+    default:
+      return state;
+  }
 };
 
 export default userReducer;
